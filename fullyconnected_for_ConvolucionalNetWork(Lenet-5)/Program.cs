@@ -8,8 +8,20 @@ namespace fullyconnected_for_ConvolucionalNetWork_Lenet_5_
     {
         static void Main(string[] args)
         {
-            
             Random azar = new Random(0);
+            List<double> input = new List<double>();
+
+            input.Add(azar.NextDouble());
+
+            input.Add(azar.NextDouble());
+
+            input.Add(azar.NextDouble());
+            input.Add(azar.NextDouble());
+            input.Add(azar.NextDouble());
+            input.Add(azar.NextDouble());
+            Mlp red = new Mlp(input);
+            red.feedForward();
+            /*Random azar = new Random(0);
 
             List<double> input = new List<double>();
 
@@ -33,15 +45,15 @@ namespace fullyconnected_for_ConvolucionalNetWork_Lenet_5_
 
             capa2.CalculaSalidaDeCapa(capa1.GetSalida());
 
-            FullyConectedLayer capa3 = new FullyConectedLayer(azar, 10, capa2.GetNeuronas().Count, "softmax");
+            FullyConectedLayer capa3 = new FullyConectedLayer(azar, 28, capa2.GetNeuronas().Count, "softmax");
 
             capa3.CalculaSalidaDeCapa(capa2.GetSalida());
 
-            Program.ShowCapa(capa3);
+            Program.ShowCapa(capa3);*/
 
         }
 
-        public static void ShowCapa(FullyConectedLayer capa)
+        /*public static void ShowCapa(FullyConectedLayer capa)
         {
             List<double> list = capa.GetSalida();
 
@@ -50,6 +62,6 @@ namespace fullyconnected_for_ConvolucionalNetWork_Lenet_5_
                 Console.WriteLine(valor);
             }
 
-        }
+        }*/
     }
 }
